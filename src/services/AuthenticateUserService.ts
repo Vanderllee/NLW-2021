@@ -1,6 +1,7 @@
 
 import axios from "axios";
 import prismaClient from '../../src/prisma';
+import { sign } from 'jsonwebtoken';
 
 type AccessTokenResponse = {
     access_token: string
@@ -35,15 +36,18 @@ class AuthenticateUserService {
             }
         })
 
+        //from github
         const { login, avatar_url, id, name } = response.data;
 
-
+        //if user exists on the db
         let user = await prismaClient.user.findFirst({
             where: {
                 github_id: id
             }
         })
 
+
+        // if not exists on the db: create an user
         if(!user) {
           user =  await prismaClient.user.create({
                 data: {
@@ -55,7 +59,23 @@ class AuthenticateUserService {
             })
         }
 
-        return response.data;
+        const token = sign({
+            user: {
+                name: user.name,
+                avatar_url: user.avatar_url,
+                id: user.id
+            }
+        }, 
+
+        "45c17641b9c08d024d1c3825f1c048b26298bc2d",
+
+        {
+            subject: user.id,
+            expiresIn: "1d"
+        }
+        )
+
+        return { token, user };
 
     }
 }
