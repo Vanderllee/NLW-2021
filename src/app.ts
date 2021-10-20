@@ -1,8 +1,23 @@
-import "dotenv/config";
 import * as express from 'express';
+import "dotenv/config";
+import { router } from './routes';
 const port = 4000;
-
 const app = express();
+
+app.use(express.json());
+
+app.use(router);
+
+
+
+
+
+
+
+
+
+
+
 
 
 app.get('/github', (req, res) => {
