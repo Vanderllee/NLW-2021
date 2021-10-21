@@ -4,7 +4,7 @@ import * as http from 'http';
 import * as cors from 'cors';
 import { Server } from 'socket.io';
 import { router } from './routes';
-const port = 4000;
+
 const app = express();
 app.use(cors())
 
@@ -40,4 +40,4 @@ app.get('/signin/callback', (req, res) => {
 })
 
 
-app.listen(port, () => console.log(`Server is running on port ${ port }`));
+export { serverHttp, io };
