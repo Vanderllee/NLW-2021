@@ -6,7 +6,7 @@
   "author": "Vanderllee <vanderllee@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --exit-child src/app.ts"
+    "dev": "ts-node-dev --exit-child src/server.ts"
   },
   "dependencies": {
     "@prisma/client": "^3.3.0",
