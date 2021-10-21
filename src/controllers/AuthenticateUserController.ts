@@ -14,13 +14,12 @@ class AuthenticateUserController {
 
         try{
             const result = await service.execute(code);
+
             return response.json(result);
+            
         } catch(err) {
             return response.json(err);
         }
-
-
-       
 
       
     }

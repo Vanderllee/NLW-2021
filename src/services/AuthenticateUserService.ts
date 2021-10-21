@@ -67,7 +67,7 @@ class AuthenticateUserService {
             }
         }, 
 
-        "45c17641b9c08d024d1c3825f1c048b26298bc2d",
+        process.env.JWT_SECRET,
 
         {
             subject: user.id,
