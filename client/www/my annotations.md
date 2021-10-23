@@ -16,4 +16,7 @@
     3. Criar a pasta componentes em src.
     4. Na pasta componentes, criar os componentes nas pastas LoginBox, MessageList,  SendMessageForm. 
     5. Criar arquivo index.tsx para cada pasta.
-    6. 
+    6. Desenvolver o html dos componentes.
+    7. Estilizar o LoginBox.
+    8. Estilizar o MessageList.
+    
