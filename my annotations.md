@@ -19,4 +19,14 @@
     6. Desenvolver o html dos componentes.
     7. Estilizar o LoginBox.
     8. Estilizar o MessageList.
-    
+    9. Adicionar responsividade.
+
+## Integração entre Frontend e Backend
+#### Criar um serviço para fazer a integração
+    1. Criar uma pasta service em src do frontend;
+    2. Criar arquivo api.ts em service;
+    3. Instalar o axios nesse arquivo;
+    4. Importa e criar uma constante api passando a baseURL;
+    5. No componente MessageList, requisitar os dados;
+    6. Criar interface e passar os dados para o estado do componente;
+    7. Renderiar os dados em tela;
